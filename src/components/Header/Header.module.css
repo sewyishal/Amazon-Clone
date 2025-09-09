@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.header__container {
+  height: 70px;
+  background-color: #131921;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: white;
+}
+.logo__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 250px;
+}
+.logo__container img {
+  width: 80px;
+  padding-top: 5px;
+  margin-left: 20px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.delivery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+  padding: 5px;
+}
+.delivery p {
+  font-size: 12px;
+}
+.search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+}
+.search select,
+.search input {
+  padding: 10px;
+  font-weight: bold;
+  outline: 1px solid white;
+}
+.search select {
+  border: none;
+}
+.search input {
+  border: 1px solid white;
+  width: 100%;
+  margin-right: -2px;
+}
+.search svg {
+  padding: 7px;
+  background-color: yellow;
+  color: black;
+}
+.search svg:hover {
+  background-color: orange;
+  cursor: pointer;
+}
+.search:focus-within {
+  border: 2px solid yellow;
+}
+.order__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 450px;
+}
+.order__container a {
+  color: white;
+  text-decoration: none;
+}
+.order__container p {
+  font-size: 12px;
+}
+.language {
+  background-color: black;
+  border: none;
+  color: white;
+}
+.language img {
+  width: 40%;
+}
+.cart {
+  position: relative;
+}
+.cart span {
+  position: absolute;
+  top: 0px;
+  background-color: black;
+  color: orange;
+  left: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.order__container a:hover,
+.delivery:hover,
+.logo__container a:hover,
+.lower__container a:hover,
+.cart:hover {
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.lower__container {
+  color: white;
+  background-color: #232f3e;
+}
+.lower__container ul {
+  display: flex;
+  list-style: none;
+  gap: 5px;
+}
+.lower__container ul li {
+  padding: 10px;
+}
+.lower__container ul li:first-child {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+@media screen and (max-width: 576px) {
+  .header__container {
+    flex-direction: column;
+    display: flex;
+    flex-direction: column !important;
+    height: auto;
+  }
+  .language {
+    display: none;
+  }
+  .lower__container ul li:nth-child(n + 4) {
+    display: none;
+  }
+}
