@@ -2,7 +2,7 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import { img } from "./img/data";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import classes from "./Carousel.module.css";
+//import classes from "./Carousel.module.css";
 const CarouselEffect = () => {
   return (
     <div>
@@ -14,7 +14,11 @@ const CarouselEffect = () => {
       >
         {img.map((imageItemLink) => {
           return (
-            <img src={imageItemLink} alt="carousel image" key={imageItemLink} />
+            <img
+              src={imageItemLink}
+              alt="Product carousel"
+              key={imageItemLink}
+            />
           );
         })}
       </Carousel>
