@@ -3,6 +3,7 @@ import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import classes from "./Header.module.css";
 import LowerHeader from "./LowerHeader";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -12,13 +13,13 @@ const Header = () => {
         <div className={classes.topBar}>
           {/* Logo + delivery */}
           <div className={classes.left}>
-            <a href="/">
+            <Link to="/">
               <img
                 src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
                 alt="Amazon Logo"
                 className={classes.logo}
               />
-            </a>
+            </Link>
             <div className={classes.delivery}>
               <p>Delivered to</p>
               <span>Ethiopia</span>
@@ -52,20 +53,20 @@ const Header = () => {
               </select>
             </div>
 
-            <a href="/" className={classes.account}>
+            <Link to="/auth" className={classes.account}>
               <p>Sign In</p>
               <span>Account & Lists</span>
-            </a>
+            </Link>
 
-            <a href="/" className={classes.orders}>
+            <Link to="/orders" className={classes.orders}>
               <p>Returns</p>
               <span>& Orders</span>
-            </a>
+            </Link>
 
-            <a href="/" className={classes.cart}>
+            <Link to="/cart" className={classes.cart}>
               <BiCart />
               <span>0</span>
-            </a>
+            </Link>
           </div>
         </div>
       </header>
