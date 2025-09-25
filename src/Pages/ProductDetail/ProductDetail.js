@@ -5,20 +5,25 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import ProductCard from "../../components/Product/ProductCard";
 import { producturl } from "../../Api/endPoint";
+import Loader from "../../components/Loader/Loader";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get(`${producturl}/products/${id}`)
       .then((res) => {
         setProduct(res.data);
+        setLoading(false);
         console.log("Fetched product:", res.data);
       })
       .catch((err) => {
         console.error("Error fetching product:", err);
+        setLoading(false);
       });
   }, [id]);
 
@@ -32,7 +37,11 @@ const ProductDetail = () => {
 
   return (
     <LayOut>
-      <ProductCard product={product} key={product.id} />
+      {loading ? (
+        <Loader />
+      ) : (
+        <ProductCard product={product} key={product.id} />
+      )}
     </LayOut>
   );
 };
