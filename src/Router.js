@@ -19,7 +19,7 @@ const Routing = () => {
         <Route path="/orders" element={<Orders />} />{" "}
         <Route path="/payment" element={<Payment />} />{" "}
         <Route path="/product/:id" element={<ProductDetail />} />{" "}
-        <Route path="/results" element={<Results />} />{" "}
+        <Route path="/category/:categoryName" element={<Results />} />{" "}
       </Routes>{" "}
     </Router>
   );
